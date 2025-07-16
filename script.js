@@ -68,3 +68,41 @@ function talkToLifeTwin() {
     });
 }
 
+messages: [
+  { role: "system", content: "You are LifeTwin AI, a helpful emotional assistant." },
+  { role: "user", content: input }
+]
+
+async function sendMessage() {
+  const input = document.getElementById("msgInput").value;
+  const chatBox = document.getElementById("chatBox");
+
+  chatBox.innerHTML += `<p><strong>You:</strong> ${input}</p>`;
+
+  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer sk-PASTE_YOUR_KEY_HERE"
+    },
+    body: JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: [
+        { role: "system", content: "You are LifeTwin AI, a helpful emotional assistant." },
+        { role: "user", content: input }
+      ]
+    })
+  });
+
+  const data = await response.json();
+
+  if (data.choices && data.choices[0]) {
+    const reply = data.choices[0].message.content;
+    chatBox.innerHTML += `<p><strong>LifeTwin:</strong> ${reply}</p>`;
+  } else {
+    chatBox.innerHTML += `<p><strong>LifeTwin:</strong> Error receiving reply</p>`;
+  }
+
+  document.getElementById("msgInput").value = "";
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
