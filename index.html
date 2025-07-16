@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeTwin - Your Digital Self</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to LifeTwin</h1>
+        <p>Capture your thoughts. Talk to your future self.</p>
+
+        <button id="loginBtn">Sign In with Google</button>
+
+        <!-- <button onclick="signIn()">Sign In with Google</button> -->
+
+        <div id="dashboard" style="display: none;">
+            <h2>Hello, <span id="user-name"></span></h2>
+
+            <textarea id="memory" placeholder="Write a memory..."></textarea>
+            <button onclick="saveMemory()">Save Memory</button>
+
+            <textarea id="futureMessage" placeholder="Message for the future..."></textarea>
+            <input type="date" id="futureDate">
+            <button onclick="saveFutureMessage()">Schedule Future Message</button>
+
+            <h3>Chat with LifeTwin</h3>
+            <textarea id="chatInput" placeholder="Say something..."></textarea>
+            <button onclick="talkToLifeTwin()">Send</button>
+            <div id="chatOutput"></div>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="script.js"></script>
+    </div>
+    
+</body>
+</html>
