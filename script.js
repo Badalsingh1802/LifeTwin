@@ -61,9 +61,10 @@ function talkToLifeTwin() {
         max_tokens: 100
     }, {
         headers: {
-            "Authorization": "Bearer YOUR_OPENAI_API_KEY"
+            "Authorization": "Bearer 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"
         }
     }).then(response => {
         document.getElementById("chatOutput").textContent = response.data.choices[0].text.trim();
     });
 }
+
