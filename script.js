@@ -1,11 +1,11 @@
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDuCux8hnVZvQh2lWL8_VYf9Te40U1RNU8",
+    apiKey: "",
     authDomain: "lifetwin-39aff.firebaseapp.com",
     projectId: "lifetwin-39aff",
     storageBucket: "lifetwin-39aff.firebasestorage.app",
     messagingSenderId: "160775443048",
-    appId: "1:160775443048:web:6028a231a107b94906a1dd",
+    appId: "",
     measurementId: "G-PNYJS53CDQ"
 };
 
@@ -52,21 +52,7 @@ function saveFutureMessage() {
         document.getElementById("futureMessage").value = "";
     }
 }
-
-// function talkToLifeTwin() {
-//     const prompt = document.getElementById("chatInput").value;
-//     axios.post("https://api.openai.com/v1/completions", {
-//         model: "text-davinci-003",
-//         prompt: "Act like Badal's LifeTwin. " + prompt,
-//         max_tokens: 100
-//     }, {
-//         headers: {
-//             "Authorization": "Bearer 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"
-//         }
-//     }).then(response => {
-//         document.getElementById("chatOutput").textContent = response.data.choices[0].text.trim();
-//     });
-// }
+ 
 
 
 
@@ -80,7 +66,7 @@ async function sendMessage() {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
+            "Authorization": ""
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
