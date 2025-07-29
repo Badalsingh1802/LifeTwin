@@ -1,15 +1,4 @@
 
-const firebaseConfig = {
-    apiKey: "",
-    authDomain: "lifetwin-39aff.firebaseapp.com",
-    projectId: "lifetwin-39aff",
-    storageBucket: "lifetwin-39aff.firebasestorage.app",
-    messagingSenderId: "160775443048",
-    appId: "",
-    measurementId: "G-PNYJS53CDQ"
-};
-
-firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
